@@ -1,0 +1,10 @@
+---
+- name: Add a user
+  hosts: aviservers
+  gather_facts: false
+  tasks:
+    - name: Add User
+      win_user:
+        name: avi
+        password: "Abcd1234"
+        state: present
