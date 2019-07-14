@@ -1,0 +1,14 @@
+---
+- name: Deploy Index File
+  hosts: aviservers
+  tasks:
+    - name: Ensure IIS Web Server is installed
+      win_feature:
+        name: "Web-Server"
+        state: present
+      when: ansible_os_family == "Windows"
+    
+    - name: Deploy Index File
+      template:
+        src: index.htm
+        dest: c:\inetpub\wwwroot\iisstart.htm

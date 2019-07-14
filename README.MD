@@ -117,4 +117,19 @@ $ ansible-playbook -i inventory playbooks/config/stats.yml
 $ ansible-playbook -i inventory playbooks/config/ping.yml
 $ ansible-playbook -i inventory playbooks/scripts/powershell.yml
 $ ansible-playbook -i inventory playbooks/user/create.yml
+$ ansible-playbook -i inventory playbooks/iis/enable.yml
 ```
+
+## Issues
+
+* The specified module 'ServerManager' was not loaded because no valid module file was found in any module directory.
+    * Install [Remote Server Administration](https://www.microsoft.com/en-au/download/details.aspx?id=45520) Tools for Windows 10.
+
+    ```powershell
+    PS > Import-Module ServerManager
+    PS > Get-WindowsFeature
+    ```
+
+## Known Issues
+
+* win_feature module will work only in Windows Server edition. 
