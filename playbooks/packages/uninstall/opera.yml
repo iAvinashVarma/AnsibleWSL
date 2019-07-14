@@ -1,0 +1,8 @@
+---
+- name: Uninstall Opera
+  hosts: aviservers
+  tasks:
+    - name: Uninstall Opera
+      win_package:
+        product_id: 'Opera Software'
+        state: absent

@@ -1,0 +1,8 @@
+---
+- name: Uninstall Firefox
+  hosts: aviservers
+  tasks:
+    - name: Uninstall Firefox
+      win_package:
+        product_id: 'Mozilla Firefox'
+        state: absent

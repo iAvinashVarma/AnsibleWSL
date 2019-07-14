@@ -1,0 +1,10 @@
+---
+- name: Install Opera
+  hosts: aviservers
+  tasks:
+    - name: Install Opera from exe
+      win_package:
+        path: https://net.geo.opera.com/opera/stable/windows?http_referrer=https://www.google.com/&utm_source=google_via_opera_com&utm_medium=ose&utm_campaign=google_ose_via_opera_com_https&utm_lastpage=opera.com/download&dl_token=23457444
+        product_id: 'Opera Software'
+        state: present
+        arguments: '-ms /INI=C:\Temp\opera\mInstall.ini'

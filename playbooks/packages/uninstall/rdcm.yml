@@ -1,0 +1,8 @@
+---
+- name: Uninstall Remote Desktop Connection Manager
+  hosts: aviservers
+  tasks:
+    - name: Uninstall Remote Desktop Connection Manager
+      win_package:
+        product_id: '{0240359E-6A4C-4884-9E94-B397A02D893C}'
+        state: absent

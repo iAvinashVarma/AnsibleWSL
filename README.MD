@@ -118,6 +118,10 @@ $ ansible-playbook -i inventory playbooks/config/ping.yml
 $ ansible-playbook -i inventory playbooks/scripts/powershell.yml
 $ ansible-playbook -i inventory playbooks/user/create.yml
 $ ansible-playbook -i inventory playbooks/iis/enable.yml
+$ ansible-playbook -i inventory playbooks/packages/install/rdcm.yml
+$ ansible-playbook -i inventory playbooks/packages/uninstall/rdcm.yml
+$ ansible-playbook -i inventory playbooks/packages/install/firefox.yml
+$ ansible-playbook -i inventory playbooks/packages/uninstall/firefox.yml
 ```
 
 ## Issues
