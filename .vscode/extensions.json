@@ -6,7 +6,8 @@
 	"recommendations": [
 		"vscoss.vscode-ansible",
 		"ms-vscode.powershell",
-		"ms-vscode-remote.remote-wsl"
+		"ms-vscode-remote.remote-wsl",
+		"redhat.vscode-yaml"
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
