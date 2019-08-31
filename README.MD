@@ -169,7 +169,19 @@ $ ansible-vault encrypt group_vars/aviservers/aviservers.yml
 ### Edit Encypted File
 
 ```bash
-$ ansible-vault encrypt group_vars/aviservers/aviservers.yml
+$ ansible-vault edit group_vars/aviservers/aviservers.yml
+```
+
+### View Encypted File
+
+```bash
+$ ansible-vault view group_vars/aviservers/aviservers.yml
+```
+
+### Decrypt File
+
+```bash
+$ ansible-vault decrypt group_vars/aviservers/aviservers.yml
 ```
 
 ### Run the playbooks with ecryption
