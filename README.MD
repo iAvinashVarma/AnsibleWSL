@@ -72,7 +72,7 @@ PS > .\scripts\ConfigureRemotingForAnsible.ps1
 ### Ping
 
 ```bash
-$ ansible aviservers -i inventory.yml -m win_ping
+$ ansible aviservers -m win_ping
 ```
 
 * If ansible.cfg is configured in non NTFS file system, no need of adding inventort parameter, can run the below command.
@@ -84,44 +84,44 @@ $ ansible aviservers -m win_ping
 ### Get System Information
 
 ```bash
-$ ansible aviservers -i inventory.yml -m setup
+$ ansible aviservers -m setup
 ```
 
 ### Execute plain commands
 
 ```bash
-$ ansible aviservers -i inventory.yml -m raw -a "dir"
-$ ansible aviservers -i inventory.yml -m raw -a "ipconfig" 
+$ ansible aviservers -m raw -a "dir"
+$ ansible aviservers -m raw -a "ipconfig" 
 ```
 
 ### Execute service related commands
 
 ```bash
-$ ansible aviservers -i inventory.yml -m win_service -a name="spooler"
-$ ansible aviservers -i inventory.yml -m win_service -a "name=spooler state=stopped"
-$ ansible aviservers -i inventory.yml -m win_service -a "name=spooler state=started"
+$ ansible aviservers -m win_service -a name="spooler"
+$ ansible aviservers -m win_service -a "name=spooler state=stopped"
+$ ansible aviservers -m win_service -a "name=spooler state=started"
 ```
 
 ### Execute feature related commands
 
 ```bash
-$ ansible aviservers -i inventory.yml -m win_feature -a "name=Telnet-Client state=present"
+$ ansible aviservers -m win_feature -a "name=Telnet-Client state=present"
 ```
 
 ## Run Playbooks
 
 ```bash
-$ ansible-playbook -i inventory.yml playbooks/local/test.yml
-$ ansible-playbook -i inventory.yml playbooks/config/ipconfig.yml
-$ ansible-playbook -i inventory.yml playbooks/config/stats.yml
-$ ansible-playbook -i inventory.yml playbooks/config/ping.yml
-$ ansible-playbook -i inventory.yml playbooks/scripts/powershell.yml
-$ ansible-playbook -i inventory.yml playbooks/user/create.yml
-$ ansible-playbook -i inventory.yml playbooks/iis/enable.yml
-$ ansible-playbook -i inventory.yml playbooks/packages/install/rdcm.yml
-$ ansible-playbook -i inventory.yml playbooks/packages/uninstall/rdcm.yml
-$ ansible-playbook -i inventory.yml playbooks/packages/install/firefox.yml
-$ ansible-playbook -i inventory.yml playbooks/packages/uninstall/firefox.yml
+$ ansible-playbook playbooks/local/test.yml
+$ ansible-playbook playbooks/config/ipconfig.yml
+$ ansible-playbook playbooks/config/stats.yml
+$ ansible-playbook playbooks/config/ping.yml
+$ ansible-playbook playbooks/scripts/powershell.yml
+$ ansible-playbook playbooks/user/create.yml
+$ ansible-playbook playbooks/iis/enable.yml
+$ ansible-playbook playbooks/packages/install/rdcm.yml
+$ ansible-playbook playbooks/packages/uninstall/rdcm.yml
+$ ansible-playbook playbooks/packages/install/firefox.yml
+$ ansible-playbook playbooks/packages/uninstall/firefox.yml
 ```
 
 ## Issues
@@ -191,12 +191,12 @@ $ ansible-vault decrypt group_vars/aviservers/aviservers.yml
 ```bash
 $ touch /secret/vault
 $ ansible-vault edit group_vars/aviservers/aviservers.yml
-$ ansible-playbook -i inventory.yml playbooks/config/ping.yml
+$ ansible-playbook playbooks/config/ping.yml
 ```
 
 ```bash
-$ ansible-playbook -i inventory.yml playbooks/config/ping.yml --vault-password-file /etc/ansible/secret/vault
-$ ansible-playbook -i inventory.yml playbooks/config/ping.yml --ask-vault-pass 
+$ ansible-playbook playbooks/config/ping.yml --vault-password-file /etc/ansible/secret/vault
+$ ansible-playbook playbooks/config/ping.yml --ask-vault-pass 
 ```
 
 ### Setting the Ansible Vault Editor

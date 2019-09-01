@@ -1,0 +1,9 @@
+---
+  - name: Install IIS (Web-Server and Web-Common-Http)
+    hosts: all
+    gather_facts: false
+    win_feature:
+      name:
+      - Web-Server
+      - Web-Common-Http
+      state: present
