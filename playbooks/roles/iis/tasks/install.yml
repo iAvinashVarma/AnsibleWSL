@@ -1,0 +1,12 @@
+---
+- name: Acme IIS site
+  win_iis_website:
+    name: Acme
+    state: started
+    port: 80
+    ip: 127.0.0.1
+    hostname: acme.local
+    application_pool: acme
+    physical_path: C:\sites\acme
+    parameters: logfile.directory:C:\sites\logs
+  register: website

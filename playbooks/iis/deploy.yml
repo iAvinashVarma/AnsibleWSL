@@ -10,5 +10,5 @@
     
     - name: Deploy Index File
       template:
-        src: index.htm
+        src: files/index.htm
         dest: c:\inetpub\wwwroot\iisstart.htm

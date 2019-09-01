@@ -196,10 +196,18 @@ $ ansible-playbook -i inventory.yml playbooks/config/ping.yml
 
 ```bash
 $ ansible-playbook -i inventory.yml playbooks/config/ping.yml --vault-password-file /etc/ansible/secret/vault
+$ ansible-playbook -i inventory.yml playbooks/config/ping.yml --ask-vault-pass 
+```
+
+### Setting the Ansible Vault Editor
+
+```bash
+$ export EDITOR=vi
 ```
 
 ## Ansible Galaxy
 
 ```bash
+$ cd playbooks/roles/
 $ ansible-galaxy init iis --offline
 ```

@@ -1,0 +1,6 @@
+---
+# handlers file for iis
+- name: Restart Default Web Site
+  win_iis_website:
+    name: "Default Web Site"
+    state: absent
